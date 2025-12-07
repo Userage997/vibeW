@@ -267,12 +267,12 @@ body {
 }
 
 .avatar-search-icon {
-    font-size: 4.5rem;
+    font-size: 5.5rem;
     color: #3a86ff;
     text-shadow: 
-        0 0 15px rgba(58, 134, 255, 0.7),
-        0 0 30px rgba(58, 134, 255, 0.5),
-        0 0 45px rgba(58, 134, 255, 0.3);
+        0 0 15px rgba(58, 134, 255, 0.8),
+        0 0 30px rgba(58, 134, 255, 0.6),
+        0 0 45px rgba(58, 134, 255, 0.4);
     animation: searchIconGlow 3s ease-in-out infinite;
     position: relative;
     z-index: 2;
@@ -329,7 +329,7 @@ body {
 
 @media (max-width: 576px) {
     .avatar-search-icon {
-        font-size: 2.8rem;
+        font-size: 3.8rem;
     }
 }
 
