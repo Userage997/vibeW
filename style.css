@@ -88,7 +88,7 @@ body {
 
 .nav-logo {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     font-weight: 700;
     color: #fff;
     text-decoration: none;
@@ -570,42 +570,15 @@ body {
     font-weight: 600;
 }
 
-.project-status.active-status {
-    background-color: rgba(0, 204, 102, 0.1);
-    border-left-color: #00cc66;
-}
-
-/* Стиль для статуса "Резерв" */
+/* Статус резерва */
 .status-value.reserve {
     color: #ffaa00;
     font-weight: 600;
 }
 
-.project-status.reserve-status {
-    background-color: rgba(255, 170, 0, 0.1);
-    border-left-color: #ffaa00;
-}
-
-.project-note {
-    display: flex;
-    align-items: flex-start;
-    padding: 12px 15px;
-    background-color: rgba(255, 153, 0, 0.1);
-    border-radius: 8px;
-    border-left: 4px solid #ff9900;
-}
-
-.project-note i {
-    color: #ff9900;
-    margin-right: 10px;
-    margin-top: 2px;
-    font-size: 1rem;
-}
-
-.project-note span {
-    color: #ffcc99;
-    font-size: 0.95rem;
-    line-height: 1.5;
+.project-status {
+    background-color: rgba(0, 204, 102, 0.1);
+    border-left-color: #00cc66;
 }
 
 /* Ссылка на проект */
@@ -1072,6 +1045,10 @@ body {
     
     .friend-name {
         font-size: 1.6rem;
+    }
+    
+    .nav-logo {
+        font-size: 1.2rem;
     }
 }
 
