@@ -237,22 +237,20 @@ body {
     width: 100%;
     height: 100%;
     border-radius: 50%;
-    background-color: #111;
+    background: linear-gradient(135deg, #1a1a2e, #16213e);
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 5rem;
-    color: #3a86ff;
     overflow: hidden;
     position: relative;
 }
 
-.avatar-placeholder img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 50%;
-    display: block;
+.avatar-initials {
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: #3a86ff;
+    text-shadow: 0 0 20px rgba(58, 134, 255, 0.5);
+    letter-spacing: 2px;
 }
 
 /* NFT бейдж для аватара */
@@ -480,8 +478,8 @@ body {
 }
 
 .project-placeholder {
-    background-color: #111;
-    border: 2px dashed #333;
+    background: linear-gradient(135deg, #0a0a0a, #1a1a1a);
+    border: 2px solid #333;
     border-radius: 15px;
     height: 350px;
     display: flex;
@@ -493,28 +491,26 @@ body {
     overflow: hidden;
 }
 
-/* Иконка для проекта Финланов */
-.project-icon {
-    font-size: 4rem;
-    color: #ff9900;
+.project-icon-main {
+    font-size: 5rem;
+    color: #3a86ff;
     margin-bottom: 20px;
+    text-shadow: 0 0 15px rgba(58, 134, 255, 0.3);
+}
+
+.project-icon-reserve {
+    font-size: 5rem;
+    color: #ffaa00;
+    margin-bottom: 20px;
+    text-shadow: 0 0 15px rgba(255, 170, 0, 0.3);
 }
 
 .project-placeholder-text {
-    color: #ff9900;
-    font-size: 1.2rem;
+    color: #fff;
+    font-size: 1.5rem;
     font-weight: 600;
-}
-
-.project-placeholder i {
-    font-size: 5rem;
-    margin-bottom: 20px;
-}
-
-.project-placeholder img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    text-align: center;
+    padding: 0 20px;
 }
 
 .project-title {
@@ -558,11 +554,14 @@ body {
     border-radius: 10px;
     border-left: 5px solid;
     margin-bottom: 15px;
+    background-color: rgba(0, 204, 102, 0.1);
+    border-left-color: #00cc66;
 }
 
 .status-label {
     font-weight: 600;
     margin-right: 10px;
+    color: #fff;
 }
 
 .status-value.active {
@@ -576,9 +575,9 @@ body {
     font-weight: 600;
 }
 
-.project-status {
-    background-color: rgba(0, 204, 102, 0.1);
-    border-left-color: #00cc66;
+.project-status.reserve-status {
+    background-color: rgba(255, 170, 0, 0.1);
+    border-left-color: #ffaa00;
 }
 
 /* Ссылка на проект */
@@ -704,74 +703,11 @@ body {
     position: relative;
 }
 
-.friend-avatar img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-
-.friend-avatar.orange-bg {
-    background: linear-gradient(135deg, #ff8c00, #ff5e00);
-}
-
-.friend-avatar .friend-initials {
-    position: relative;
-    z-index: 1;
-}
-
-.ally-card:hover .friend-avatar {
-    transform: scale(1.05);
-    border-color: rgba(131, 56, 236, 0.5);
-    transition: transform 0.3s, border-color 0.3s;
-}
-
-.ally-card:hover .friend-avatar.orange-bg {
-    border-color: rgba(255, 140, 0, 0.5);
-}
-
-@keyframes fadeInAvatar {
-    from {
-        opacity: 0;
-        transform: scale(0.8);
-    }
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
-}
-
-.avatar-placeholder img,
-.friend-avatar img {
-    animation: fadeInAvatar 0.8s ease-out forwards;
-}
-
-.avatar-frame:hover .avatar-placeholder img {
-    transform: scale(1.05);
-    transition: transform 0.5s ease;
-}
-
-.friend-avatar::before {
-    content: attr(data-initials);
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: linear-gradient(135deg, #3a86ff, #8338ec);
+.friend-initials {
+    font-size: 2.5rem;
+    font-weight: 800;
     color: white;
-    font-size: 2rem;
-    font-weight: 700;
-    z-index: 0;
-}
-
-.friend-avatar.orange-bg::before {
-    background: linear-gradient(135deg, #ff8c00, #ff5e00);
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
 }
 
 .friend-name {
@@ -906,25 +842,6 @@ body {
     }
 }
 
-/* Стили для инициалов при ошибке загрузки изображений */
-.avatar-initials {
-    font-size: 3rem;
-    font-weight: 700;
-    color: #3a86ff;
-    z-index: 2;
-}
-
-.fallback-initials {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 2rem;
-    font-weight: 700;
-    color: white;
-    z-index: 2;
-}
-
 /* Адаптивность */
 @media (max-width: 992px) {
     .about-content {
@@ -1017,13 +934,17 @@ body {
         height: 180px;
     }
     
+    .avatar-initials {
+        font-size: 2.8rem;
+    }
+    
     .friend-avatar {
         width: 100px;
         height: 100px;
     }
     
-    .friend-avatar::before {
-        font-size: 1.5rem;
+    .friend-initials {
+        font-size: 1.8rem;
     }
     
     .stat-label {
@@ -1050,6 +971,15 @@ body {
     .nav-logo {
         font-size: 1.2rem;
     }
+    
+    .project-icon-main,
+    .project-icon-reserve {
+        font-size: 4rem;
+    }
+    
+    .project-placeholder-text {
+        font-size: 1.3rem;
+    }
 }
 
 @media (max-width: 576px) {
@@ -1074,8 +1004,8 @@ body {
         height: 150px;
     }
     
-    .avatar-placeholder {
-        font-size: 4rem;
+    .avatar-initials {
+        font-size: 2.2rem;
     }
     
     .friend-avatar {
@@ -1083,12 +1013,8 @@ body {
         height: 90px;
     }
     
-    .friend-avatar::before {
-        font-size: 1.2rem;
-    }
-    
-    .friend-card, .stat-card {
-        padding: 20px;
+    .friend-initials {
+        font-size: 1.5rem;
     }
     
     .ally-card {
@@ -1103,12 +1029,13 @@ body {
         margin-top: 40px;
     }
     
-    .project-icon {
+    .project-icon-main,
+    .project-icon-reserve {
         font-size: 3rem;
     }
     
     .project-placeholder-text {
-        font-size: 1rem;
+        font-size: 1.1rem;
     }
     
     .friend-name {
