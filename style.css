@@ -298,12 +298,12 @@ body {
 .search-icon-container::before {
     content: '';
     position: absolute;
-    width: 80%;
-    height: 80%;
+    width: 85%;
+    height: 85%;
     border-radius: 50%;
     background: radial-gradient(circle, 
-        rgba(58, 134, 255, 0.2) 0%, 
-        rgba(58, 134, 255, 0.1) 30%, 
+        rgba(58, 134, 255, 0.25) 0%, 
+        rgba(58, 134, 255, 0.15) 30%, 
         transparent 70%);
     animation: pulseGlow 4s ease-in-out infinite;
     z-index: 1;
