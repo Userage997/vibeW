@@ -9,9 +9,9 @@ document.addEventListener('DOMContentLoaded', function() {
     // Предзагрузка изображений
     function preloadImages() {
         const imageUrls = [
-            'https://i.ibb.co/ycFyr8wt/avatar-washington.jpg',
+            'https://ltdfoto.ru/images/2025/01/12/nuJcnw.jpg',
             'https://i.ibb.co/wrpVbnR5/avatar-voronov.jpg',
-            'https://i.ibb.co/ht6V2fZ/epysium-logo.jpg',
+            'https://ltdfoto.ru/images/2025/01/12/nuJH38.jpg',
             'https://i.ibb.co/WWhK7H23/finlanov-partiya.jpg'
         ];
         
@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function() {
             img.addEventListener('error', function() {
                 console.error('Не удалось загрузить изображение:', this.src);
                 
-                // Для аватара OPG
+                // Для аватара O P G
                 if (this.id === 'avatar-img') {
                     const placeholder = this.closest('.avatar-placeholder');
                     this.style.display = 'none';
@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     if (!placeholder.querySelector('.avatar-initials')) {
                         const initialsSpan = document.createElement('span');
                         initialsSpan.className = 'avatar-initials';
-                        initialsSpan.textContent = 'OP';
+                        initialsSpan.textContent = 'OPG';
                         initialsSpan.style.fontSize = '3rem';
                         initialsSpan.style.fontWeight = '700';
                         initialsSpan.style.color = '#3a86ff';
@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     if (!avatarContainer.querySelector('.fallback-initials')) {
                         const initialsSpan = document.createElement('span');
                         initialsSpan.className = 'fallback-initials';
-                        initialsSpan.textContent = 'SV';
+                        initialsSpan.textContent = 'SVW';
                         initialsSpan.style.position = 'absolute';
                         initialsSpan.style.top = '50%';
                         initialsSpan.style.left = '50%';
@@ -75,7 +75,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     
                     if (!placeholder.querySelector('.fallback-icon')) {
                         const icon = document.createElement('i');
-                        icon.className = 'fas fa-project-diagram fallback-icon';
+                        icon.className = 'fas fa-search fallback-icon';
                         icon.style.fontSize = '5rem';
                         icon.style.color = '#3a86ff';
                         icon.style.marginBottom = '20px';
@@ -96,7 +96,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     
                     if (!placeholder.querySelector('.reserve-fallback')) {
                         const icon = document.createElement('i');
-                        icon.className = 'fas fa-flag reserve-fallback';
+                        icon.className = 'fas fa-box-archive reserve-fallback';
                         icon.style.fontSize = '4rem';
                         icon.style.color = '#ffaa00';
                         icon.style.marginBottom = '20px';
@@ -284,16 +284,5 @@ document.addEventListener('DOMContentLoaded', function() {
                 }, 200);
             }, 1000);
         }
-        
-        // Добавляем классы для статусов проектов
-        const projectStatuses = document.querySelectorAll('.project-status');
-        projectStatuses.forEach(status => {
-            const statusValue = status.querySelector('.status-value');
-            if (statusValue && statusValue.classList.contains('active')) {
-                status.classList.add('active-status');
-            } else if (statusValue && statusValue.classList.contains('reserve')) {
-                status.classList.add('reserve-status');
-            }
-        });
     });
 });
